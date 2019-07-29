@@ -268,6 +268,30 @@ Nucleo_64.menu.pnum.NUCLEO_G071RB.build.variant=NUCLEO_G071RB
 Nucleo_64.menu.pnum.NUCLEO_G071RB.build.cmsis_lib_gcc=arm_cortexM0l_math
 Nucleo_64.menu.pnum.NUCLEO_G071RB.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} -D__CORTEX_SC=0
 
+# NUCLEO_G431RB board
+Nucleo_64.menu.pnum.NUCLEO_G431RB=Nucleo G431RB
+Nucleo_64.menu.pnum.NUCLEO_G431RB.node=NODE_G431RB
+Nucleo_64.menu.pnum.NUCLEO_G431RB.upload.maximum_size=131072
+Nucleo_64.menu.pnum.NUCLEO_G431RB.upload.maximum_data_size=32768
+Nucleo_64.menu.pnum.NUCLEO_G431RB.build.mcu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard
+Nucleo_64.menu.pnum.NUCLEO_G431RB.build.board=NUCLEO_G431RB
+Nucleo_64.menu.pnum.NUCLEO_G431RB.build.series=STM32G4xx
+Nucleo_64.menu.pnum.NUCLEO_G431RB.build.product_line=STM32G431xx
+Nucleo_64.menu.pnum.NUCLEO_G431RB.build.variant=NUCLEO_G431RB
+Nucleo_64.menu.pnum.NUCLEO_G431RB.build.cmsis_lib_gcc=arm_cortexM4l_math
+
+# NUCLEO_G474RE board
+Nucleo_64.menu.pnum.NUCLEO_G474RE=Nucleo G474RE
+Nucleo_64.menu.pnum.NUCLEO_G474RE.node=NODE_G474RE
+Nucleo_64.menu.pnum.NUCLEO_G474RE.upload.maximum_size=524288
+Nucleo_64.menu.pnum.NUCLEO_G474RE.upload.maximum_data_size=131072
+Nucleo_64.menu.pnum.NUCLEO_G474RE.build.mcu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard
+Nucleo_64.menu.pnum.NUCLEO_G474RE.build.board=NUCLEO_G474RE
+Nucleo_64.menu.pnum.NUCLEO_G474RE.build.series=STM32G4xx
+Nucleo_64.menu.pnum.NUCLEO_G474RE.build.product_line=STM32G474xx
+Nucleo_64.menu.pnum.NUCLEO_G474RE.build.variant=NUCLEO_G474RE
+Nucleo_64.menu.pnum.NUCLEO_G474RE.build.cmsis_lib_gcc=arm_cortexM4l_math
+
 # NUCLEO_L053R8 board
 Nucleo_64.menu.pnum.NUCLEO_L053R8=Nucleo L053R8
 Nucleo_64.menu.pnum.NUCLEO_L053R8.node=NODE_L053R8
@@ -421,6 +445,18 @@ Nucleo_32.menu.pnum.NUCLEO_F303K8.build.product_line=STM32F303x8
 Nucleo_32.menu.pnum.NUCLEO_F303K8.build.variant=NUCLEO_F303K8
 Nucleo_32.menu.pnum.NUCLEO_F303K8.build.cmsis_lib_gcc=arm_cortexM4l_math
 
+# NUCLEO_G431KB board
+Nucleo_32.menu.pnum.NUCLEO_G431KB=Nucleo G431KB
+Nucleo_32.menu.pnum.NUCLEO_G431KB.node=NODE_G431KB
+Nucleo_32.menu.pnum.NUCLEO_G431KB.upload.maximum_size=131072
+Nucleo_32.menu.pnum.NUCLEO_G431KB.upload.maximum_data_size=32768
+Nucleo_32.menu.pnum.NUCLEO_G431KB.build.mcu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard
+Nucleo_32.menu.pnum.NUCLEO_G431KB.build.board=NUCLEO_G431KB
+Nucleo_32.menu.pnum.NUCLEO_G431KB.build.series=STM32G4xx
+Nucleo_32.menu.pnum.NUCLEO_G431KB.build.product_line=STM32G431xx
+Nucleo_32.menu.pnum.NUCLEO_G431KB.build.variant=NUCLEO_G431KB
+Nucleo_32.menu.pnum.NUCLEO_G431KB.build.cmsis_lib_gcc=arm_cortexM4l_math
+
 # Upload menu
 Nucleo_32.menu.upload_method.MassStorage=Mass Storage
 Nucleo_32.menu.upload_method.MassStorage.upload.protocol=
@@ -565,18 +601,26 @@ GenF0.name=Generic STM32F0 series
 
 GenF0.build.core=arduino
 GenF0.build.board=GenF0
+GenF0.build.mcu=cortex-m0
+GenF0.build.series=STM32F0xx
+GenF0.build.cmsis_lib_gcc=arm_cortexM0l_math
 GenF0.build.extra_flags=-D{build.product_line} {build.xSerial}
 
 # DEMO_F030F4 board
 GenF0.menu.pnum.DEMO_F030F4=STM32F030F4 Demo board
 GenF0.menu.pnum.DEMO_F030F4.upload.maximum_data_size=4096
 GenF0.menu.pnum.DEMO_F030F4.upload.maximum_size=16384
-GenF0.menu.pnum.DEMO_F030F4.build.mcu=cortex-m0
 GenF0.menu.pnum.DEMO_F030F4.build.board=DEMO_F030F4
-GenF0.menu.pnum.DEMO_F030F4.build.series=STM32F0xx
 GenF0.menu.pnum.DEMO_F030F4.build.product_line=STM32F030x6
 GenF0.menu.pnum.DEMO_F030F4.build.variant=DEMO_F030F4
-GenF0.menu.pnum.DEMO_F030F4.build.cmsis_lib_gcc=arm_cortexM0l_math
+
+# DEMO_F030F4_16M board
+GenF0.menu.pnum.DEMO_F030F4_16M=STM32F030F4 Demo board (16Mhz)
+GenF0.menu.pnum.DEMO_F030F4_16M.upload.maximum_data_size=4096
+GenF0.menu.pnum.DEMO_F030F4_16M.upload.maximum_size=16384
+GenF0.menu.pnum.DEMO_F030F4_16M.build.board=DEMO_F030F4_16M
+GenF0.menu.pnum.DEMO_F030F4_16M.build.product_line=STM32F030x6
+GenF0.menu.pnum.DEMO_F030F4_16M.build.variant=DEMO_F030F4
 
 # Upload menu
 GenF0.menu.upload_method.swdMethod=STM32CubeProgrammer (SWD)
@@ -811,6 +855,14 @@ GenF4.menu.pnum.FK407M1.upload.maximum_data_size=131072
 GenF4.menu.pnum.FK407M1.build.board=FK407M1
 GenF4.menu.pnum.FK407M1.build.product_line=STM32F407xx
 GenF4.menu.pnum.FK407M1.build.variant=FK407M1
+
+# BlackPill F401CC
+GenF4.menu.pnum.BLACKPILL_F401CC=BlackPill F401CC
+GenF4.menu.pnum.BLACKPILL_F401CC.upload.maximum_size=262144
+GenF4.menu.pnum.BLACKPILL_F401CC.upload.maximum_data_size=65536
+GenF4.menu.pnum.BLACKPILL_F401CC.build.board=BLACKPILL_F401CC
+GenF4.menu.pnum.BLACKPILL_F401CC.build.product_line=STM32F401xC
+GenF4.menu.pnum.BLACKPILL_F401CC.build.variant=PILL_F401XX
 
 # Upload menu
 GenF4.menu.upload_method.swdMethod=STM32CubeProgrammer (SWD)
