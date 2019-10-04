@@ -90,7 +90,7 @@ HardwareTimer::HardwareTimer(TIM_TypeDef *instance)
     _channelIC[i].ICPrescaler = TIM_ICPSC_DIV1;
     _channelIC[i].ICFilter = 0;
 
-    for (int i = 0; i < TIMER_CHANNELS ; i++) {
+    for (int i = 0; i < TIMER_CHANNELS + 1 ; i++) {
       callbacks[i] = NULL;
     }
   }
@@ -723,6 +723,9 @@ void HardwareTimer::updateCallback(TIM_HandleTypeDef *htim)
   */
 void HardwareTimer::captureCompareCallback(TIM_HandleTypeDef *htim)
 {
+  if (htim == NULL) {
+    Error_Handler();
+  }
   uint32_t channel = htim->Channel;
 
   switch (htim->Channel) {
@@ -746,10 +749,6 @@ void HardwareTimer::captureCompareCallback(TIM_HandleTypeDef *htim)
       return;
   }
 
-  if (htim == NULL) {
-    Error_Handler();
-  }
-
   HardwareTimerObj_t *obj = get_timer_obj(htim);
   HardwareTimer *HT = (HardwareTimer *)(obj->__this);
 
@@ -765,9 +764,9 @@ void HardwareTimer::captureCompareCallback(TIM_HandleTypeDef *htim)
 HardwareTimer::~HardwareTimer()
 {
   uint32_t index = get_timer_index(_HardwareTimerObj.handle.Instance);
+  disableTimerClock(&(_HardwareTimerObj.handle));
   HardwareTimer_Handle[index] = NULL;
   _HardwareTimerObj.__this = NULL;
-  enableTimerClock(&(_HardwareTimerObj.handle));
 }
 
 /**
